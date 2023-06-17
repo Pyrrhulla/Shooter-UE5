@@ -112,7 +112,7 @@ void ASTUBaseWeapon::DecreaseAmmo()
 {
 	if (CurrentAmmo.Bullets == 0)
 	{
-		UE_LOG(LogBaseWeapon, Warning, TEXT("Clip is empty"));
+		//UE_LOG(LogBaseWeapon, Warning, TEXT("Clip is empty"));
 		return;
 	}
 	CurrentAmmo.Bullets--;
@@ -144,14 +144,14 @@ void ASTUBaseWeapon::ChangeClip()
 	{
 		if (CurrentAmmo.Clips == 0)
 		{
-			UE_LOG(LogBaseWeapon, Warning, TEXT("No more clips"));
+			//UE_LOG(LogBaseWeapon, Warning, TEXT("No more clips"));
 			return;
 		}
 		CurrentAmmo.Clips--;
 	}
 	CurrentAmmo.Bullets = DefaultAmmo.Bullets;
 
-	UE_LOG(LogBaseWeapon, Display, TEXT("----------Change Clip--------"));
+	//UE_LOG(LogBaseWeapon, Display, TEXT("----------Change Clip--------"));
 
 }
 
