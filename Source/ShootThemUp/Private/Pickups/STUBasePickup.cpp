@@ -36,7 +36,16 @@ void ASTUBasePickup::Tick(float DeltaTime)
 void ASTUBasePickup::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorBeginOverlap(OtherActor);
-	PickupWasTaken();
+	const auto Pawn = Cast<APawn>(OtherActor);
+	if (GivePickupTo(Pawn))
+	{
+		PickupWasTaken();
+	}
+}
+
+bool ASTUBasePickup::GivePickupTo(APawn* PlayerPawn)
+{
+	return false;
 }
 
 
@@ -47,7 +56,7 @@ void ASTUBasePickup::PickupWasTaken()
 	{
 		GetRootComponent()->SetVisibility(false, true);
 	}
-		FTimerHandle RespawnTimerHandle;
+
 		GetWorldTimerManager().SetTimer(RespawnTimerHandle, this, &ASTUBasePickup::Respawn, RespawnTime);
 	
 }
@@ -60,4 +69,10 @@ void ASTUBasePickup::Respawn()
 	{
 		GetRootComponent()->SetVisibility(true, true);
 	}
+}
+
+bool ASTUBasePickup::CouldBeTaken() const
+{
+	return GetWorldTimerManager().IsTimerActive(RespawnTimerHandle);
+
 }

@@ -24,12 +24,16 @@ public:
 	virtual void StartFire();
 	virtual void StopFire();
 
-	void  ChangeClip();
+	void ChangeClip();
 	bool CanReload() const;
 
 	FWeaponUIData GetUIData() const { return UIData; }
 	FAmmoData GetAmmoData() const { return CurrentAmmo; }
+	bool TryToAddAmmo(int32 ClipsAmount);
+
 	bool IsAmmoEmpty() const;
+	bool IsAmmoFull() const;
+	
 
 protected:
 
