@@ -5,5 +5,8 @@ All logic is made using C++, including such components as health, weapon, VFX, e
 A procedural level created in Houdini with a battle royale game mode. 
 
 
-https://github.com/Pyrrhulla/Shooter-UE5/assets/55465730/3ba1f7f5-5d55-45fa-bc29-01b5c5680a14
+
+
+
+https://github.com/Pyrrhulla/Shooter-UE5/assets/55465730/0255b0bc-d269-44c1-a39d-c094276ca743
 
